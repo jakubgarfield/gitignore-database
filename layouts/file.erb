@@ -1,0 +1,24 @@
+<% render "default" do %>
+    <div class="file">
+        <h1><%= item[:title] %></h1>
+        <article>
+            <%= yield %>
+        </article>
+        <section>
+          <p><a href=".gitignore">Download</a></p>
+          <pre id="gitignore"></pre>
+          <p><a href=".gitignore">Download</a></p>
+        </section>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          url : ".gitignore",
+          dataType: "text",
+          success : function (data) {
+            $("#gitignore").html(data);
+          }
+        });
+      });
+    </script>
+<% end %>

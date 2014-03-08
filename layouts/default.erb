@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>gitignore database</title>
+    <meta name="author" content="Jakub Chodounsky" />
+    <meta name="robots" content="all, follow" />
+    <meta name="description" content="<%= site_description(item) %>" />
+    <meta name="keywords" content="<%= site_keywords(item) %>" />
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link href="/css/default.css" rel="stylesheet" type="text/css" >
+    <script src="http://code.jquery.com/jquery.js"></script>
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="masthead">
+        <header>
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <h3><a href="/" class="muted">.gitignore database</a></h3>
+        </header>
+      </div>
+
+      <hr />
+
+      <div class="main">
+        <section><%= yield %></section>
+      </div>
+      
+      <hr />
+
+      <div class="footer">
+        <footer>
+          <p>&copy; <a href="http://chodounsky.net">Jakub Chodounský</a> &middot; <%= link_to("Privacy Policy", "/privacy-policy/") %></p>
+        </footer>
+      </div>
+    </div>
+  </body>
+    
+  <script src="/js/bootstrap.js"></script>
+</html>
