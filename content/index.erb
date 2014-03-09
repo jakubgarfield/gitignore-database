@@ -3,11 +3,8 @@ title: What files ignore in git?
 ---
 <div class="jumbotron">
   <h1>.gitignore files for your project!</h1>
-  <form>
-    <fieldset>
-      <p><input id="search" type="text" placeholder="Enter technology…" data-provide="typeahead" data-source="[<%= articles.select { |i| i[:tags].join(', ') }.join(', ') %>]" data-items="4" autocomplete="off"/></p>
-      <p><button type="submit" class="btn btn-large btn-success"><i class="icon-search icon-white"></i> Search</button></p>
-    </fieldset>
+    <p><input id="search" type="text" placeholder="Enter technology…" autocomplete="off"/></p>
+    <p><a id="submit" class="btn btn-large btn-success"><i class="icon-search icon-white"></i> Search</a></p>
   </form>
 </div>
 
@@ -17,7 +14,7 @@ title: What files ignore in git?
     <tr><td>Name</td><td>Tags</td><td>Raw</td></tr>
   </thead>
   
-  <% sorted_articles.each do |article| %>
+  <% articles.sort_by { |i| i[:title]}.each do |article| %>
     <tr>
       <td><%= link_to article[:title], article.path %></td>
       <td><%= article[:tags].join(', ') %></td>
@@ -29,6 +26,26 @@ title: What files ignore in git?
 
 <script>
 $(document).ready(function() {
+
+  var tags = <%= articles.map { |i| i[:title] } %>;
+  
+  var links = { <% articles.each do |article| %>"<%= article[:title] %>" : "<%= article.path %>", <% end %>};
+
   $("#search").focus();
+  $("#search").typeahead({ source: tags, items: 4 });
+
+  $('#search').keydown(function(event){    
+    if(event.keyCode==13){
+     $('#submit').trigger('click');
+    }
+  });
+
+  $("#submit").click(function() {
+    var link = links[$("#search").val()];
+
+    if (link != undefined) {
+      window.location.href = link;
+    }
+  });
 });
 </script>

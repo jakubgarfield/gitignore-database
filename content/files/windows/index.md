@@ -1,5 +1,5 @@
 ﻿---
-title: windows
+title: Windows
 kind: article
 tags: [windows, microsoft]
 ---
