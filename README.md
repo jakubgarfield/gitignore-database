@@ -1,9 +1,9 @@
 gitignore-database
 ==================
 
-This project is a simple database of [.gitignore](http://git-scm.com/docs/gitignore) files.
+This project is a simple database of [.gitignore](http://git-scm.com/docs/gitignore) files. It's created for a fast search use with nanoc and javascript.
 
-It's created for a fast search use with nanoc and javascript.
+It is a completely static HTML site and doesn't require any special server capabilities.
 
 ### Add your .gitignore
 
