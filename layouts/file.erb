@@ -1,13 +1,13 @@
 <% render "default" do %>
     <div class="file">
         <h1><%= item[:title] %></h1>
+        <p class="small muted"><%= item[:tags].join(', ') %></p>
         <article>
             <%= yield %>
         </article>
         <section>
-          <p><a href=".gitignore">Download</a></p>
           <pre id="gitignore"></pre>
-          <p><a href=".gitignore">Download</a></p>
+          <p class="text-center"><a href=".gitignore" class="btn btn-large btn-success" download><i class="icon-download icon-white"></i> Download</a></p>
         </section>
     </div>
     <script>

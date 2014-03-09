@@ -1,7 +1,7 @@
 ﻿---
-title: nanoc .gitignore
+title: nanoc 
 kind: article
 tags: [nanoc, ruby]
 ---
 
-
+.gitignore file for nanoc projects
